@@ -22,7 +22,7 @@
 ;;-----------------------------------------------------------------------------
 
 ;;turn on/off toolbar
-;;(tool-bar-mode nil)
+(tool-bar-mode -1)
 
 ;; turn on/off the menubar
 ;;(menu-bar-mode nil) 
@@ -352,8 +352,6 @@
 
 (global-set-key (kbd "C-c q") #'hubmax-quit-bottom-side-windows)
 
-
-
 (defun prev-window ()
    (interactive)
    (other-window -1))
@@ -361,22 +359,13 @@
 (define-key global-map (kbd "C-x p") 'prev-window)
 
 
-
+;;-----------------------------------------------------------------------------
+;; Man page settings
+;;-----------------------------------------------------------------------------
+(setq Man-notify-method 'pushy)
 
 ;;-----------------------------------------------------------------------------
 ;; load local settings
 ;;-----------------------------------------------------------------------------
 (when (file-exists-p "~/.emacs.d/init.local.el")
   (load-file "~/.emacs.d/init.local.el"))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(safe-local-variable-values (quote ((TeX-master . "application") (TeX-master . t)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
